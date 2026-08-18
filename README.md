@@ -1,4 +1,4 @@
-## 3SCT_WD_3
+## SCT_WD_3
 
 ## ByteQuiz - Quiz Game Application
 
