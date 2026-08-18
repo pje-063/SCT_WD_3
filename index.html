@@ -3,63 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteQuiz - Interactive Quiz Application</title>
+    <title>ByteQuiz - Full-Screen Quiz Studio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main class="quiz-card">
-        <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
+    <!-- Ambient Glow Background -->
+    <div class="aura-bg">
+        <div class="aura-node node-1"></div>
+        <div class="aura-node node-2"></div>
+    </div>
 
-        <!-- App Header -->
-        <div class="quiz-header">
-            <div class="badge-icon">
-                <i class="fa-solid fa-layer-group"></i>
+    <div class="dashboard-wrapper">
+        <!-- Header -->
+        <header class="top-nav">
+            <div class="brand">
+                <div class="logo-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="brand-info">
+                    <span class="brand-title">ByteQuiz</span>
+                    <span class="brand-sub">Test Your Knowledge Byte by Byte</span>
+                </div>
             </div>
-            <h1 class="app-title">ByteQuiz</h1>
-            <p class="app-subtitle">Test Your Knowledge Byte by Byte</p>
-        </div>
 
-        <!-- Meta Bar -->
-        <div class="meta-bar">
-            <span class="tracker" id="questionTracker">Question 1 of 4</span>
-            <span class="type-tag" id="questionType">Single Select</span>
-        </div>
-
-        <!-- Question Body -->
-        <div class="quiz-body" id="quizBody">
-            <h2 class="question-text" id="questionText">Loading question...</h2>
-            <div class="options-container" id="optionsContainer"></div>
-        </div>
-
-        <!-- Action Controls -->
-        <div class="quiz-footer" id="quizFooter">
-            <span class="hint-text" id="hintText"></span>
-            <button id="nextBtn" class="btn btn-purple" disabled>
-                Next <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </div>
-
-        <!-- Results Screen -->
-        <div class="results-card hidden" id="resultsCard">
-            <div class="trophy-badge">
-                <i class="fa-solid fa-trophy"></i>
+            <div class="nav-stats">
+                <div class="stat-pill"><i class="fa-solid fa-fire"></i> Streak: <span id="streakCount">0</span></div>
+                <div class="stat-pill timer-pill" id="timerPill"><i class="fa-regular fa-clock"></i> <span id="timer">15</span>s</div>
             </div>
-            <h2>Quiz Completed!</h2>
-            <p class="score-text">You scored <strong id="userScore">0</strong> out of <span id="totalQuestions">0</span></p>
-            <p class="score-msg" id="scoreMsg">Great effort!</p>
-            
-            <button id="restartBtn" class="btn btn-purple">
-                <i class="fa-solid fa-rotate-left"></i> Try Again
-            </button>
-        </div>
-    </main>
+        </header>
 
+        <!-- Main Workspace -->
+        <div class="main-layout">
+            <!-- Left Sidebar Info -->
+            <aside class="sidebar-panel">
+                <div class="widget-card">
+                    <div class="widget-title">Quiz Progress</div>
+                    <div class="progress-info">
+                        <span id="questionCounter">Question 1 of 4</span>
+                        <strong id="progressPercent">25%</strong>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="widget-card">
+                    <div class="widget-title">Current Status</div>
+                    <span class="type-badge" id="typeBadge">ROUND 1</span>
+                    <p class="type-desc" id="typeDesc">Complete all questions in the set to advance to the next round.</p>
+                </div>
+            </aside>
+
+            <!-- Right Question Arena -->
+            <main class="quiz-arena" id="quizArena">
+                <!-- Question View -->
+                <div id="questionView">
+                    <h2 class="question-text" id="questionText">Which HTML tag is used to attach external CSS stylesheets?</h2>
+                    
+                    <div class="options-grid" id="optionsContainer">
+                        <!-- Options dynamically loaded here -->
+                    </div>
+
+                    <div class="arena-footer">
+                        <button class="primary-btn" id="nextBtn" disabled>
+                            Next <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result View -->
+                <div id="resultView" class="hidden">
+                    <div class="result-card">
+                        <div class="trophy-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <h2>Round Completed!</h2>
+                        <p>Here is your overall score performance:</p>
+                        <div class="score-badge" id="finalScore">4 / 4</div>
+                        
+                        <div class="result-actions">
+                            <button class="primary-btn secondary-btn" id="retryBtn">
+                                <i class="fa-solid fa-rotate-right"></i> Retry Round
+                            </button>
+                            <button class="primary-btn" id="nextRoundBtn">
+                                Next Round <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
