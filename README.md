@@ -1,27 +1,29 @@
-# SCT_WD_3
+## 3SCT_WD_3
 
 ## ByteQuiz - Quiz Game Application
 
-### SkillCraft Technology - Web Development Internship
+## SkillCraft Technology - Web Development Internship
 
-This project is an interactive and responsive Quiz Game Application developed using HTML, CSS, and JavaScript.
+This project is an interactive and responsive full-screen Quiz Studio application developed using HTML, CSS, and JavaScript.
 
-### Features
+## Features
 
-- Multiple Question Formats (Single Select, Multi-Select, Fill in the Blanks)
-- Real-Time Progress Bar Tracking
-- Dynamic Answer Selection & Input Validation
-- End-of-Quiz Score Summary & Evaluation Feedback
-- Modern Dark-Themed Violet Gradient UI
+- Full-Screen Split Dashboard Layout
+- Multi-Round Question Progression (Next Round Feature)
+- Real-Time Question Countdown Timer
+- Dynamic Option Highlighting & Immediate Feedback
+- Streak Counter & Progress Tracking Bar
+- Centered Score Breakdown & Evaluation View
+- Particle Confetti Celebration Effect on Perfect Score
+- Modern Dark-Themed Violet Glassmorphism UI
 - Fully Responsive Layout for All Device Sizes
 - Clean & Modular Code Structure
 
-### Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
 
 Author
-
 Vidya Vijay
