@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteQuiz - Interactive Quiz Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="quiz-card">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- App Header -->
+        <div class="quiz-header">
+            <div class="badge-icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h1 class="app-title">ByteQuiz</h1>
+            <p class="app-subtitle">Test Your Knowledge Byte by Byte</p>
+        </div>
+
+        <!-- Meta Bar -->
+        <div class="meta-bar">
+            <span class="tracker" id="questionTracker">Question 1 of 4</span>
+            <span class="type-tag" id="questionType">Single Select</span>
+        </div>
+
+        <!-- Question Body -->
+        <div class="quiz-body" id="quizBody">
+            <h2 class="question-text" id="questionText">Loading question...</h2>
+            <div class="options-container" id="optionsContainer"></div>
+        </div>
+
+        <!-- Action Controls -->
+        <div class="quiz-footer" id="quizFooter">
+            <span class="hint-text" id="hintText"></span>
+            <button id="nextBtn" class="btn btn-purple" disabled>
+                Next <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-card hidden" id="resultsCard">
+            <div class="trophy-badge">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h2>Quiz Completed!</h2>
+            <p class="score-text">You scored <strong id="userScore">0</strong> out of <span id="totalQuestions">0</span></p>
+            <p class="score-msg" id="scoreMsg">Great effort!</p>
+            
+            <button id="restartBtn" class="btn btn-purple">
+                <i class="fa-solid fa-rotate-left"></i> Try Again
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
